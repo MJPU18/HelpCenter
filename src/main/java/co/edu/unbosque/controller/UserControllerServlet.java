@@ -45,12 +45,23 @@ public class UserControllerServlet extends HttpServlet {
 		gdao = new GeneralServiceDAO();
 		pdao = new ParticipantDAO();
 		sdao = new PsychologistDAO();
+		System.out.println("List Service: \n");
+		for(GeneralServiceDTO serv: gdao.getListGeneralService()) {
+			System.out.println(serv.toString()+",\n");
+		}
+		for(ParticipantDTO part: pdao.getListParticipants()) {
+			System.out.println(part.toString()+",\n");
+		}
+		for(PsychologistDTO psyco: sdao.getListPsychologists()) {
+			System.out.println(psyco.toString()+",\n");
+		}
 
 	}
 
 	// read
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 	}
 
 	// create
@@ -78,7 +89,10 @@ public class UserControllerServlet extends HttpServlet {
 
 			pdao.create(new ParticipantDTO(username, password, name, Long.parseLong(document), birth, city,
 					Integer.parseInt(psessions), nickname));
-			System.out.println(pdao.getListParticipants().get(0).toString());
+			System.out.println("List Participants: \n");
+			for(ParticipantDTO part: pdao.getListParticipants()) {
+				System.out.println(part.toString()+",\n");
+			}
 
 		} else if (method.equals("psychconf")) {
 
@@ -96,7 +110,10 @@ public class UserControllerServlet extends HttpServlet {
 			sdao.create(new PsychologistDTO(username, password, name, Long.parseLong(document), birth, city,
 					Year.parse(gYear), Integer.parseInt(daysService), Integer.parseInt(sSupported),
 					Double.parseDouble(Salary)));
-			System.out.println(sdao.getListPsychologists().get(0).toString());
+			System.out.println("List Ppsychologist: \n");
+			for(PsychologistDTO psyco: sdao.getListPsychologists()) {
+				System.out.println(psyco.toString()+",\n");
+			}
 
 		} else if (method.equals("servconf")) {
 
@@ -111,8 +128,10 @@ public class UserControllerServlet extends HttpServlet {
 
 			gdao.create(new GeneralServiceDTO(username, password, name, Long.parseLong(document), birth, city,
 					Double.parseDouble(salary), Integer.parseInt(csessions)));
-
-			System.out.println(gdao.getListGeneralService().get(0).toString());
+			System.out.println("List Service: \n");
+			for(GeneralServiceDTO serv: gdao.getListGeneralService()) {
+				System.out.println(serv.toString()+",\n");
+			}
 		}
 		out.close();
 	}

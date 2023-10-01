@@ -136,4 +136,14 @@ public class PsychologistDTO extends PersonDTO{
 		this.salary = salary;
 	}
 
+	@Override
+	public String toString() {
+		return "PsychologistDTO [yearOfGraduation=" + yearOfGraduation + ", daysInService=" + daysInService
+				+ ", suportedSessions=" + suportedSessions + ", salary=" + salary + ", UserName=" + getUserName()
+				+ ", Password=" + getPassword() + ", Name=" + getName() + ", Document=" + getDocument()
+				+ ", DateOfBirth=" + getDateOfBirth() + ", CityOfBirth()=" + getCityOfBirth() + "]";
+	}
+
+	
+
 }

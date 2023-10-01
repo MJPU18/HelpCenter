@@ -137,5 +137,11 @@ public class PersonDTO {
 	public void setCityOfBirth(String cityOfBirth) {
 		this.cityOfBirth = cityOfBirth;
 	}
+
+	@Override
+	public String toString() {
+		return "PersonDTO [userName=" + userName + ", password=" + password + ", name=" + name + ", document="
+				+ document + ", dateOfBirth=" + dateOfBirth + ", cityOfBirth=" + cityOfBirth + "]";
+	}
 	
 }
