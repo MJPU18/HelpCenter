@@ -13,13 +13,13 @@ import co.edu.unbosque.model.PersonDTO;
  */
 public class PersonDAO implements CRUDoperation<PersonDTO>{
 	
-	private ArrayList<PersonDTO> listpeople;
+	private ArrayList<PersonDTO> listPeople;
 	
 	/**
 	 * Create an object of class PersonDAO
 	 */
 	public PersonDAO() {
-		listpeople=new ArrayList<>();
+		listPeople=new ArrayList<>();
 	}
 	
 	/**
@@ -27,7 +27,7 @@ public class PersonDAO implements CRUDoperation<PersonDTO>{
      * @return The ArrayList of PersonDTO objects.
      */
 	public ArrayList<PersonDTO> getListpeople() {
-		return listpeople;
+		return listPeople;
 	}
 	
 	/**
@@ -35,22 +35,22 @@ public class PersonDAO implements CRUDoperation<PersonDTO>{
 	 * @param listpeople :The ArrayList of PersonDTO objects.
 	 */
 	public void setListpeople(ArrayList<PersonDTO> listpeople) {
-		this.listpeople = listpeople;
+		this.listPeople = listpeople;
 	}
 
 	@Override
 	public void create(PersonDTO info) {
-		listpeople.add(info);
+		listPeople.add(info);
 	}
 
 	@Override
 	public void update(int index, PersonDTO info) {
-		listpeople.set(index, info);
+		listPeople.set(index, info);
 	}
 
 	@Override
 	public PersonDTO delete(int index) {
-		return listpeople.remove(index);
+		return listPeople.remove(index);
 	}
 	
 	

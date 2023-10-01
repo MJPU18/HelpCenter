@@ -6,7 +6,18 @@
 	<display-name>HelpCenter</display-name>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	<servlet>
+		<description>servlet for login validation</description>
+		<display-name>UserControllerServlet</display-name>
+		<servlet-name>UserControllerServlet</servlet-name>
+		<servlet-class>co.edu.unbosque.controller.UserControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserControllerServlet</servlet-name>
+		<url-pattern>/usercontrollerservlet</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
