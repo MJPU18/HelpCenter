@@ -3,6 +3,7 @@ package co.edu.unbosque.model.persistence;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.GeneralServiceDTO;
+import co.edu.unbosque.model.GeneralServiceDTOTest;
 
 /**
  * This class represents a data access object (DAO) for managing
@@ -14,14 +15,14 @@ import co.edu.unbosque.model.GeneralServiceDTO;
  * @author Joann Alejandro Zamudio
  * @author Jeisson Nicolas Uyaban
  */
-public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
+public class GeneralServiceDAOTest implements CRUDoperation<GeneralServiceDTOTest> {
 
-	private ArrayList<GeneralServiceDTO> listGeneralService;
+	private ArrayList<GeneralServiceDTOTest> listGeneralService;
 
 	/**
 	 * Create an object of class GeneralServiceDAO.
 	 */
-	public GeneralServiceDAO() {
+	public GeneralServiceDAOTest() {
 		listGeneralService = new ArrayList<>();
 	}
 
@@ -30,7 +31,7 @@ public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
 	 * 
 	 * @return The ArrayList of PersonDTO objects.
 	 */
-	public ArrayList<GeneralServiceDTO> getListGeneralService() {
+	public ArrayList<GeneralServiceDTOTest> getListGeneralService() {
 		return listGeneralService;
 	}
 
@@ -39,23 +40,23 @@ public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
 	 * 
 	 * @param listGeneralService :The ArrayList of GeneralServiceDTO objects.
 	 */
-	public void setListGeneralService(ArrayList<GeneralServiceDTO> listGeneralService) {
+	public void setListGeneralService(ArrayList<GeneralServiceDTOTest> listGeneralService) {
 		this.listGeneralService = listGeneralService;
 	}
 
 	@Override
-	public void create(GeneralServiceDTO info) {
+	public void create(GeneralServiceDTOTest info) {
 		listGeneralService.add(info);
 
 	}
 
 	@Override
-	public void update(int index, GeneralServiceDTO info) {
+	public void update(int index, GeneralServiceDTOTest info) {
 		listGeneralService.set(index, info);
 	}
 
 	@Override
-	public GeneralServiceDTO delete(int index) {
+	public GeneralServiceDTOTest delete(int index) {
 		return listGeneralService.remove(index);
 	}
 
