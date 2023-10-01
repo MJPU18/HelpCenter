@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-document.getElementById("psychologistform").addEventListener('submit', function(event) {
-	event.preventDefault();
-});
+	document.getElementById("psychologistform").addEventListener('submit', function(event) {
+		event.preventDefault();
+	});
 
 });
 

@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="styles/styles.css"></link>
 <script src="js/logins.js"></script>
 <script src="js/registration.js"></script>
+<script type="js/show.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -215,10 +216,9 @@
 				name="psychologistsalary" placeholder="Salary" min="0"></input>
 		</div>
 
-
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="psychconf" accesskey=""
+				name="method" value="psychconf"
 				onclick="hidePsychologistForm(); showStart()">Confirm</button>
 		</div>
 
@@ -285,6 +285,13 @@
 		</div>
 
 	</form>
+<%-- 	<% --%>
+<%-- 	if ((boolean) request.getAttribute("participantCredentials")) {%> --%>
+<!-- 		<label>funciona</label> -->
+<%-- 	<%}else{%> --%>
+<!-- 		<label>no funciona</label> -->
+	
+<%-- 	<%}%> --%>
 
 </body>
 </html>
