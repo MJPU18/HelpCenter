@@ -3,6 +3,7 @@ package co.edu.unbosque.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -82,7 +83,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -105,7 +106,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -130,7 +131,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -153,7 +154,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -176,7 +177,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -199,7 +200,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -222,7 +223,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -247,7 +248,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -272,7 +273,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";
@@ -297,7 +298,7 @@ public class ParticipantDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		int sessions = 6;
 		String nickName = "Tester";

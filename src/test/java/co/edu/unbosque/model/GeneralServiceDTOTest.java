@@ -2,8 +2,8 @@ package co.edu.unbosque.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.time.Month;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -86,7 +86,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -109,7 +109,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -135,7 +135,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -155,7 +155,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 
 		counter++;
 
-		LocalDate aux = LocalDate.of(01, 01, 2000);
+		LocalDate aux = LocalDate.of(2000, Month.of(01), 01);
 
 		GeneralServiceDTO aux2 = new GeneralServiceDTO("test123", "test123", "New Test", 0000000000, aux, "Bogota",
 				1000000, 6);
@@ -172,7 +172,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 
 		counter++;
 
-		LocalDate aux = LocalDate.of(01, 01, 2000);
+		LocalDate aux = LocalDate.of(2000, Month.of(01), 01);
 
 		GeneralServiceDTO aux2 = new GeneralServiceDTO("test123", "test123", "New Test", 0000000000, aux, "Bogota",
 				1000000, 6);
@@ -189,7 +189,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 
 		counter++;
 
-		LocalDate aux = LocalDate.of(01, 01, 2000);
+		LocalDate aux = LocalDate.of(2000, Month.of(01), 01);
 
 		GeneralServiceDTO aux2 = new GeneralServiceDTO("test123", "test123", "New Test", 0000000000, aux, "Bogota",
 				1000000, 6);
@@ -210,7 +210,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -235,7 +235,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -260,7 +260,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;
@@ -285,7 +285,7 @@ public class GeneralServiceDTOTest extends PersonDTOTest {
 		String password = "test123";
 		String name = "New Test";
 		long document = 0000000000;
-		LocalDate date = LocalDate.of(01, 01, 2000);
+		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 		double salary = 1000000;
 		int sessions = 6;

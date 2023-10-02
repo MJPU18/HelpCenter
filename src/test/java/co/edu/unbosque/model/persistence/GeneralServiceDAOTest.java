@@ -2,7 +2,6 @@ package co.edu.unbosque.model.persistence;
 
 import java.util.ArrayList;
 
-import co.edu.unbosque.model.GeneralServiceDTO;
 import co.edu.unbosque.model.GeneralServiceDTOTest;
 
 /**
