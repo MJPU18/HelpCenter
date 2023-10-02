@@ -6,9 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 /**
-*  The DBConnection class handles database connections.
-*  It provides methods to initialize a connection, close database resources, and getters/setters for database connection parameters.
+ * The DBConnection class handles database connections. It provides methods to
+ * initialize a connection, close database resources, and getters/setters for
+ * database connection parameters.
+ * 
  * @author Juan Pablo Urrego
  * @author Javier Meza Montero
  * @author Juan Esteban Quintero
@@ -16,25 +19,26 @@ import java.sql.Statement;
  * @author Jeisson Nicolas Uyaban
  */
 public class DBConnection {
-	
-	private Connection connect=null;
-	private Statement statement=null;
-	private PreparedStatement preparedstatement=null;
-	private ResultSet resultset=null;
-	private final String IP="127.0.0.1";
-	private final String PORT="3306";
-	private final String DATABASE="helpcenter";
-	private final String USERNAME="root";
-	private final String PASSWORD="p3r4o";
-	
+
+	private Connection connect = null;
+	private Statement statement = null;
+	private PreparedStatement preparedstatement = null;
+	private ResultSet resultset = null;
+	private final String IP = "127.0.0.1";
+	private final String PORT = "3336";
+	private final String DATABASE = "helpcenter";
+	private final String USERNAME = "root";
+	private final String PASSWORD = "Blue.2004";
+
 	/**
 	 * Create an object of class DBConnection
 	 */
-	public DBConnection() {}
-	
+	public DBConnection() {
+	}
+
 	/**
-     * Initializes the database connection.
-     */
+	 * Initializes the database connection.
+	 */
 	public void initConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -42,25 +46,26 @@ public class DBConnection {
 			e.printStackTrace();
 		}
 		try {
-			connect=DriverManager.getConnection("jdbc:mysql://"+IP+":"+PORT+"/"+DATABASE,USERNAME,PASSWORD);
+			connect = DriverManager.getConnection("jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE, USERNAME,
+					PASSWORD);
 			System.out.println("Successfully connection.");
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-     * Closes the database resources.
-     */
+	 * Closes the database resources.
+	 */
 	public void close() {
 		try {
-			if(resultset!=null) {
+			if (resultset != null) {
 				resultset.close();
 			}
-			if(statement!=null) {
+			if (statement != null) {
 				statement.close();
 			}
-			if(connect!=null) {
+			if (connect != null) {
 				connect.close();
 			}
 		} catch (SQLException e) {
@@ -69,23 +74,23 @@ public class DBConnection {
 	}
 
 	/**
-     * Gets the database connection.
-     *
-     * @return The database connection.
-     */
+	 * Gets the database connection.
+	 *
+	 * @return The database connection.
+	 */
 	public Connection getConnect() {
 		return connect;
 	}
-	
+
 	/**
-     * Sets the database connection.
-     *
-     * @param connect :The database connection to set.
-     */
+	 * Sets the database connection.
+	 *
+	 * @param connect :The database connection to set.
+	 */
 	public void setConnect(Connection connect) {
 		this.connect = connect;
 	}
-	
+
 	/**
 	 * Gets the SQL statement.
 	 *
@@ -94,8 +99,7 @@ public class DBConnection {
 	public Statement getStatement() {
 		return statement;
 	}
-	
-	
+
 	/**
 	 * Sets the SQL statement.
 	 *
@@ -104,7 +108,7 @@ public class DBConnection {
 	public void setStatement(Statement statement) {
 		this.statement = statement;
 	}
-	
+
 	/**
 	 * Gets the prepared statement.
 	 *
@@ -113,7 +117,7 @@ public class DBConnection {
 	public PreparedStatement getPreparedstatement() {
 		return preparedstatement;
 	}
-	
+
 	/**
 	 * Sets the prepared statement.
 	 *
@@ -131,7 +135,7 @@ public class DBConnection {
 	public ResultSet getResultset() {
 		return resultset;
 	}
-	
+
 	/**
 	 * Sets the result set.
 	 *
@@ -140,7 +144,7 @@ public class DBConnection {
 	public void setResultset(ResultSet resultset) {
 		this.resultset = resultset;
 	}
-	
+
 	/**
 	 * Gets the IP address of the MySQL server.
 	 *
@@ -149,7 +153,7 @@ public class DBConnection {
 	public String getIP() {
 		return IP;
 	}
-	
+
 	/**
 	 * Gets the port number of the MySQL server.
 	 *
@@ -158,7 +162,7 @@ public class DBConnection {
 	public String getPORT() {
 		return PORT;
 	}
-	
+
 	/**
 	 * Gets the name of the database.
 	 *
@@ -167,7 +171,7 @@ public class DBConnection {
 	public String getDATABASE() {
 		return DATABASE;
 	}
-	
+
 	/**
 	 * Gets the database username.
 	 *
@@ -176,7 +180,7 @@ public class DBConnection {
 	public String getUSERNAME() {
 		return USERNAME;
 	}
-	
+
 	/**
 	 * Gets the database password.
 	 *
@@ -185,6 +189,5 @@ public class DBConnection {
 	public String getPASSWORD() {
 		return PASSWORD;
 	}
-
 
 }

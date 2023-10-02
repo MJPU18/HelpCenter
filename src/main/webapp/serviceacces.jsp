@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Participant Acces</title>
+<title>Service Acces</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -22,6 +22,7 @@
 <script src="js/logins.js"></script>
 <script src="js/registration.js"></script>
 <script src="js/updates.js"></script>
+<script src="js/regserv.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -41,16 +42,22 @@
 			<button type="submit" class="btn btn-primary" id="method"
 				name="method" value="showparticipants">Show Participants</button>
 		</div>
-
+	</form>
+	<form action="usercontrollerservlet" method="post">
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" id="method"
+				name="method" value="showservice">Show Service</button>
+		</div>
 	</form>
 
 	<div class="col-12">
 		<button class="btn btn-primary" id="method" name="method"
-			value="update" onclick="showUpdateParticipantForm();">Update
+			value="update" onclick="showParticipantServForm();">Register
 			Participants</button>
 	</div>
+
 	<!-- form actualizar participante -->
-	<form class="row g-3 container" id="formupdateparticipants"
+	<form class="row g-3 container" id="participantservform"
 		action="usercontrollerservlet" method="post">
 
 		<div class="col-md-6">
@@ -104,8 +111,7 @@
 		</div>
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="updateparticipantconf"
-				onclick="hideUpdateParticipantForm();">Confirm</button>
+				name="method" value="" onclick="hideParticipantServForm();">Confirm</button>
 		</div>
 	</form>
 </body>

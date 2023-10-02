@@ -46,6 +46,7 @@ function hideParticipantForm() {
 	var form = document.getElementById("participantform");
 	form.style.display = "none";
 }
+
 /*-------------------------*/
 
 function showPsychologistForm() {
