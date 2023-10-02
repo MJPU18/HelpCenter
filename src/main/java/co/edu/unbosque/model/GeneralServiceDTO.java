@@ -105,4 +105,10 @@ public class GeneralServiceDTO extends PersonDTO {
 		this.sessionsCleaned = sessionsCleaned;
 	}
 
+	@Override
+	public String toString() {
+		return "GeneralServiceDTO [salary=" + salary + ", sessionsCleaned=" + sessionsCleaned + ", UserName="
+				+ getUserName() + ", Password=" + getPassword() + ", Name=" + getName() + ", Document=" + getDocument()
+				+ ", DateOfBirth=" + getDateOfBirth() + ", CityOfBirth()=" + getCityOfBirth() + "]";
+	}
 }
