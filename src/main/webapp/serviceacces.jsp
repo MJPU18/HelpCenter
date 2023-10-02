@@ -59,18 +59,12 @@
 	<!-- form actualizar participante -->
 	<form class="row g-3 container" id="participantservform"
 		action="usercontrollerservlet" method="post">
-
-		<div class="col-md-6">
-			<label for="participantusername" class="form-label">Index:</label> <input
-				type="text" class="form-control" id="participantusername"
-				name="participantusername" placeholder="Username"></input>
-		</div>
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Username:</label>
 			<input type="text" class="form-control" id="participantusername"
 				name="participantusername" placeholder="Username"></input>
 		</div>
-		<div class="col-12">
+		<div class="col-md-6">
 			<label for="participantpassword" class="form-label">Password:</label>
 			<input type="password" class="form-control" id="participantpassword"
 				name="participantpassword" placeholder="Password"></input>
@@ -111,7 +105,7 @@
 		</div>
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="" onclick="hideParticipantServForm();">Confirm</button>
+				name="method" value="partconf" onclick="hideParticipantServForm();">Confirm</button>
 		</div>
 	</form>
 </body>

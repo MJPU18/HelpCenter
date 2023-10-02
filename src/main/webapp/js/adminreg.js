@@ -43,9 +43,15 @@ function showRegPsychForm() {
 	var form = document.getElementById("psychologistadmform");
 	form.style.display = "flex";
 }
-
-
-
+// Act
+function hideUptPsychForm() {
+	var form = document.getElementById("formupdatepsycadm");
+	form.style.display = "none";
+}
+function showUptPsychForm() {
+	var form = document.getElementById("formupdatepsycadm");
+	form.style.display = "flex";
+}
 
 window.onload = function() {
 	hideRegPartForm();
@@ -53,4 +59,5 @@ window.onload = function() {
 	hideRegServForm();
 	hideUptServForm();
 	hideRegPsychForm();
+	hideUptPsychForm();
 }

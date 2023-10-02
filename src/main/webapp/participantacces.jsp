@@ -55,56 +55,56 @@
 
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Index:</label> <input
-				type="text" class="form-control" id="participantusername"
-				name="participantusername" placeholder="Username"></input>
+				type="text" class="form-control" id="partactindex"
+				name="partactindex" placeholder="Username"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Username:</label>
-			<input type="text" class="form-control" id="participantusername"
-				name="participantusername" placeholder="Username"></input>
+			<input type="text" class="form-control" id="partactusername"
+				name="partactusername" placeholder="Username"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantpassword" class="form-label">Password:</label>
-			<input type="password" class="form-control" id="participantpassword"
-				name="participantpassword" placeholder="Password"></input>
+			<input type="password" class="form-control" id="partactpassword"
+				name="partactpassword" placeholder="Password"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantname" class="form-label">Name:</label> <input
-				type="text" class="form-control" id="participantname"
-				name="participantname" placeholder="Name"></input>
+				type="text" class="form-control" id="partactname" name="partactname"
+				placeholder="Name"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantdocument" class="form-label">Document:</label>
-			<input type="text" class="form-control" id="participantdocument"
-				name="participantdocument" placeholder="Document" step="1"
+			<input type="text" class="form-control" id="partactdocument"
+				name="partactdocument" placeholder="Document" step="1"
 				onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"
 				onblur="validateDocument(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantdateofbirth" class="form-label">Date
 				of Birth</label> <input type="date" class="form-control"
-				id="participantdateofbirth" name="participantdateofbirth"
+				id="partactdateofbirth" name="partactdateofbirth"
 				placeholder="Date of Birth" onchange="validateYear(this)"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantcity" class="form-label">City:</label> <input
-				type="text" class="form-control" id="participantcity"
-				name="participantcity" placeholder="City"></input>
+				type="text" class="form-control" id="partactcity" name="partactcity"
+				placeholder="City"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantnickname" class="form-label">Nickname:</label>
-			<input type="text" class="form-control" id="participantnickname"
-				name="participantnickname" placeholder="Nickname"></input>
+			<input type="text" class="form-control" id="partactnickname"
+				name="partactnickname" placeholder="Nickname"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participatedsessions" class="form-label">Participated
 				Sessions:</label> <input type="number" class="form-control"
-				id="participatedsessions" name="participatedsessions"
+				id="participatedsessionsact" name="participatedsessionsact"
 				placeholder="Participated Sessions" min="0"></input>
 		</div>
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="updateparticipantconf"
+				name="method" value="updatepartconf"
 				onclick="hideUpdateParticipantForm();">Confirm</button>
 		</div>
 	</form>
