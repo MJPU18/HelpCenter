@@ -55,6 +55,7 @@ public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
 	@Override
 	public void create(GeneralServiceDTO info) {
 		try {
+			dbcon.initConnection();
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement(
 					"INSERT INTO generalservice (username, userpassword, personname, document, dateofbirth, cityofbirth, salary, sessionscleaned) VALUES(?,?,?,?,?,?,?,?);"));
 			dbcon.getPreparedstatement().setString(1, info.getUserName());

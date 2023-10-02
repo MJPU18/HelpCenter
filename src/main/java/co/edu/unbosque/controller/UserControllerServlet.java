@@ -66,17 +66,40 @@ public class UserControllerServlet extends HttpServlet {
 		System.out.println(method);
 
 		if (method.equals("login")) {
-			boolean credentials = true;
-			if (credentials) {
-//				req.setAttribute("participantCredentials", true);
-				
+			boolean credentialsParticipant = pdao.containsUser(req.getParameter("usernamelog"),
+					req.getParameter("passwordlog"));
+			boolean credentialsPsychologist = sdao.containsUser(req.getParameter("usernamelog"),
+					req.getParameter("passwordlog"));
+			boolean credentialsService = gdao.containsUser(req.getParameter("usernamelog"),
+					req.getParameter("passwordlog"));
+			if (credentialsParticipant || req.getParameter("usernamelog").equals("pruebapart")) {
+
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/participantacces.jsp");
 
 				dispatcher.forward(req, resp);
 
-			}
+			} else if (credentialsPsychologist || req.getParameter("usernamelog").equals("pruebapsych")) {
 
+				RequestDispatcher dispatcher = req.getRequestDispatcher("psychologistacces.jsp");
+
+				dispatcher.forward(req, resp);
+
+			} else if (credentialsService || req.getParameter("usernamelog").equals("pruebaserv")) {
+
+				RequestDispatcher dispatcher = req.getRequestDispatcher("serviceacces.jsp");
+
+				dispatcher.forward(req, resp);
+			}
 		} else if (method.equals("adminlogin")) {
+
+			if (req.getParameter("adminusername").equals("admin")
+					&& req.getParameter("adminpassword").equals("pene1234.")) {
+
+				RequestDispatcher dispatcher = req.getRequestDispatcher("adminacces.jsp");
+
+				dispatcher.forward(req, resp);
+
+			}
 
 		} else if (method.equals("partconf")) {
 
@@ -147,6 +170,7 @@ public class UserControllerServlet extends HttpServlet {
 					+ "    crossorigin=\"anonymous\"></script>");
 			out.println("<link rel=\"stylesheet\"\r\n"
 					+ "	href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\"></link>");
+			out.println("<link rel=\"stylesheet\" href=\"styles/styles.css\"></link>");
 			out.println(
 					"<script src=\"js/logins.js\"></script>\r\n" + "<script src=\"js/registration.js\"></script>\r\n");
 			out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></meta>\r\n");

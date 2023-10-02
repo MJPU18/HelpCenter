@@ -76,7 +76,9 @@
 
 		<LABEL class="label" for="adminusername">Username*</LABEL> <INPUT
 			class="input" type="text" placeholder="username" id="adminusername"
-			name="adminusername" /> <LABEL class="label" for="adminpassword">Password*</LABEL>
+			name="adminusername" /> 
+			
+			<LABEL class="label" for="adminpassword">Password*</LABEL>
 		<INPUT class="input" type="password" placeholder="password"
 			id="adminpassword" name="adminpassword" />
 
@@ -285,13 +287,6 @@
 		</div>
 
 	</form>
-<%-- 	<% --%>
-<%-- 	if ((boolean) request.getAttribute("participantCredentials")) {%> --%>
-<!-- 		<label>funciona</label> -->
-<%-- 	<%}else{%> --%>
-<!-- 		<label>no funciona</label> -->
-	
-<%-- 	<%}%> --%>
 
 </body>
 </html>
