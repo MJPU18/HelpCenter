@@ -28,39 +28,31 @@
 </head>
 <body>
 
-	<DIV class="header">
+	<div class="header sticky-top">
 
 		<div class="backbutton">
 			<button type="button" class="fa fa-home fa-2x"
 				onclick="window.history.back();"></button>
 		</div>
-	</DIV>
-
-	<form action="usercontrollerservlet" method="post">
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="showparticipants">Show Participants</button>
+		
+		<div class="btn-group" role="group" aria-label="Basic outlined example">
+		
+			<form action="usercontrollerservlet" method="post">
+			<button type="submit" class="btn btn-outline-primary" id="method" name="method" value="showparticipants">Show Participants</button>
+			</form>
+			
+			<form action="usercontrollerservlet" method="post">
+			<button type="submit" class="btn btn-outline-primary" id="method" name="method" value="showservice">Show Service</button>
+			</form>
+			
+			<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showRegistrationPartForm(); hideRegistrationServiceForm()">Register Participants</button>
+			
+			<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showRegistrationServiceForm(); hideRegistrationPartForm()">Register Service</button>
+			
 		</div>
-
-	</form>
-	<form action="usercontrollerservlet" method="post">
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="showservice">Show Service</button>
-		</div>
-
-	</form>
-
-	<div class="col-12">
-		<button class="btn btn-primary" id="method" name="method"
-			value="update" onclick="showRegistrationPartForm();">Register
-			Participants</button>
+		
 	</div>
-	<div class="col-12">
-		<button class="btn btn-primary" id="method" name="method"
-			value="update" onclick="showRegistrationServiceForm();">Register
-			Service</button>
-	</div>
+
 	<!-- form registrar participantes -->
 	<form class="row g-3 container" id="participantpsychform"
 		action="usercontrollerservlet" method="post">

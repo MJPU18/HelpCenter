@@ -14,3 +14,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+	var shapes = document.querySelectorAll(".shape");
+	for(var i = 0; i<shapes.length; i++){
+		shapes[i].style.display = "none";
+	}
+});
+
+function showFigure(){
+	var shapes = document.querySelectorAll(".shape");
+	for(var i = 0; i < shapes.length; i++){
+		shapes[i].style.display = "block";
+	}
+}
+
+function hideFigure(){
+	var shapes = document.querySelectorAll(".shape");
+	for(var i = 0; i < shapes.length; i++){
+		shapes[i].style.display = "none";
+	}
+}

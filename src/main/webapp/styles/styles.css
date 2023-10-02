@@ -1,8 +1,12 @@
 .container {
-	padding-left: 130px;
 	width: 90%;
-	margin-top: 25px;
+	margin-top: 5px;
 	height: 100%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	padding: 80px;
 }
 
 .container2 {
@@ -38,9 +42,13 @@
 }
 
 
-body {
-	background-color: #000814;
-	font-family: 'Consolas', sans-serif;
+body{
+	background: -webkit-radial-gradient(
+		#001d3d,
+		#000814
+	);
+	min-height: 100vh;
+	font-family: 'Consolas',sans-serif;
 	color: white;
 }
 
@@ -65,7 +73,7 @@ body {
 	border-radius: 10px;
 	backdrop-filter: blur(10px);
 	border: 2px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 40pc rgba(8, 7, 16, 0.6);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 	padding: 50px 35px;
 	font-family: 'Consolas', sans-serif;
 	color: white;
@@ -86,7 +94,7 @@ body {
 	border-radius: 10px;
 	backdrop-filter: blur(10px);
 	border: 2px solid rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 40pc rgba(8, 7, 16, 0.6);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 	padding: 30px 35px;
 	font-family: 'Consolas', sans-serif;
 	color: white;
@@ -134,10 +142,6 @@ body {
 	cursor: pointer;
 }
 
-.buttons {
-	float: left;
-}
-
 .access {
 	display: flex;
 	color: white;
@@ -154,4 +158,79 @@ body {
 	padding-left: 50px;
 	padding-top: 16px;
 	text-decoration: none;
+}
+
+.background .shape{
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	border-radius: 50%;
+	
+}
+
+.shape:first-child{
+	background: linear-gradient(
+		#1845ad,
+		#23a2f6
+	);
+	left: -90px;
+	top: 30px;
+}
+
+.shape:last-child{
+	background: linear-gradient(
+		#ff512f,
+		#f09819
+	);
+	right: -90px;
+	bottom: -40px;
+}
+
+.paragraph{
+	position: absolute;
+	left: 150px;
+	width: 50%;
+	font-size: 55px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.intro{
+	animation-duration: 3s;
+	animation-name: slide;
+}
+
+@keyframes slide{
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+	to{
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+.container3{
+	padding-left: 110px;
+	width: 100%;
+	margin-top: 1px;
+	height: 100%;
+}
+
+#method{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.table2{
+	width: 90%;
+	margin-top: 5px;
+	height: 100%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	padding: 80px;
 }

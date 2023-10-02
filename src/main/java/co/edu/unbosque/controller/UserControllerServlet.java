@@ -169,14 +169,21 @@ public class UserControllerServlet extends HttpServlet {
 					+ "    integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\"\r\n"
 					+ "    crossorigin=\"anonymous\"></script>");
 			out.println("<link rel=\"stylesheet\"\r\n"
-					+ "	href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\"></link>");
+					+ "	href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\"></link>");//casa
 			out.println("<link rel=\"stylesheet\" href=\"styles/styles.css\"></link>");
 			out.println(
 					"<script src=\"js/logins.js\"></script>\r\n" + "<script src=\"js/registration.js\"></script>\r\n");
 			out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></meta>\r\n");
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<table class=\"table table-dark table-striped-columns\" id=\"tabla\">");
+			out.println("<div class=\"header sticky-top\">");
+			out.println("<form action=\"index.jsp\">");
+			out.println(
+					"<input type=\"submit\" value = \"back\"class =\"btn btn-outline-primary\" onclick= \"window.history.back();\"");
+			out.print("</form>");
+			out.print("</div>");
+			out.print("<div class=\"table2\">");//modify
+			out.println("<table class=\"table table-dark table-striped-columns\" id=\"tabla\">");//inicio tabla
 			out.println("<thead>");
 			out.println("<tr>");
 			out.println("<th>index</th>");
@@ -226,12 +233,15 @@ public class UserControllerServlet extends HttpServlet {
 								+ g.getSessionsCleaned() + "</td><td>" + g.getSalary() + "</td></tr>"));
 
 			}
-			out.println("<form action=\"index.jsp\">");
-			out.println(
-					"<input type=\"submit\" value = \"back\"class =\"btn btn-primary\" onclick= \"window.history.back();\"");
-			out.print("</form>");
+//			out.println("<div class=\"header sticky-top\">");
+//			out.println("<form action=\"index.jsp\">");
+//			out.println(
+//					"<input type=\"submit\" value = \"back\"class =\"btn btn-outline-primary\" onclick= \"window.history.back();\"");
+//			out.print("</form>");
+//			out.print("</div>");
 			out.println("</tbody>");
-			out.println("</table>");
+			out.println("</table>");//final tabla
+			out.println("</div>");
 			out.println("</body");
 			out.println("</html");
 		}
