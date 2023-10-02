@@ -30,60 +30,74 @@
 
 
 <body>
-	<DIV class="header">
+	<div class="header sticky-top">
 
 		<div class="backbutton">
-			<button type="button" class="fa fa-home fa-2x"
-				onclick="showStart(); hideAdmin(); hideLogin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm()"></button>
+			<button type ="button" class="fa fa-home fa-2x"
+				onclick="showStart(); hideFigure(); hideAdmin(); hideLogin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm()">
+			</button>
 		</div>
-		<DIV class="btn-group" role="group"
+		<div class="btn-group" role="group"
 			aria-label="Basic outlined example">
 			<button type="button" class="btn btn-outline-primary"
-				onclick="selectedUserType = 'Participants'; hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin()">Participants</button>
+				onclick="selectedUserType = 'Participants'; showFigure(); hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin()">Participants</button>
 			<button type="button" class="btn btn-outline-primary"
-				onclick="selectedUserType = 'Psychologist';  hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin()">Psychologist</button>
+				onclick="selectedUserType = 'Psychologist'; showFigure(); hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin()">Psychologist</button>
 			<button type="button" class="btn btn-outline-primary"
-				onclick="selectedUserType = 'Service'; hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin() ">Service</button>
-		</DIV>
-	</DIV>
+				onclick="selectedUserType = 'Service'; showFigure(); hideStart(); hideAdmin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm(); showLogin() ">Service</button>
+		</div>
+	</div>
 
-	<div id="start">
+	<div id="start" class="intro container3">
 		<!-- aqui va el inicio o lo que sea -->
+		<section>
+
+			<p class="paragraph">
+				<br> <br> Help Center.<br> Solve your problems with
+				us<br> We are here for you,<br> Register to start <br>
+				<br>
+
+			</p>
+
+		</section>
+	</div>
+
+	<div class="background">
+		<div class="shape" id="shapes"></div>
+		<div class="shape"></div>
 	</div>
 
 	<form class="formlogin" id="loginform" action="usercontrollerservlet"
 		method="post">
-		<H3 class="h3log">Login Participants</H3>
+		<h3 class="h3log">Login Participants</h3>
 
-		<LABEL class="label" for="usernamelog">Username</LABEL> <INPUT
+		<label class="label" for="usernamelog">Username</label> <input
 			class="input" type="text" placeholder="username" id="usernamelog"
-			name="usernamelog" /> <LABEL class="label" for="passwordlog">Password</LABEL>
-		<INPUT class="input" type="password" placeholder="password"
+			name="usernamelog" /> <label class="label" for="passwordlog">Password</label>
+		<input class="input" type="password" placeholder="password"
 			id="passwordlog" name="passwordlog" />
 
-		<BUTTON class="buttonlogin" name="method" value="login">Log
-			In</BUTTON>
+		<button class="buttonlogin" name="method" value="login">Log
+			In</button>
 
-		<DIV class="container2">
-			<a href="#" class="access" onclick="showForm(); return false;">register</a>
-			<a href="#" class="access2" onclick="showAdmin();">admin</a>
-		</DIV>
+		<div class="container2">
+			<a href="#" class="access" onclick="hideFigure(); showForm(); return false;">register</a>
+			<a href="#" class="access2" onclick="hideFigure(); showAdmin();">admin</a>
+		</div>
 	</form>
 
 
 	<form class="formlogin2" id="adminform" action="usercontrollerservlet"
 		method="post">
 
-		<LABEL class="label" for="adminusername">Username*</LABEL> <INPUT
+		<label class="label" for="adminusername">Username*</label> <input
 			class="input" type="text" placeholder="username" id="adminusername"
-			name="adminusername" /> 
-			
-			<LABEL class="label" for="adminpassword">Password*</LABEL>
-		<INPUT class="input" type="password" placeholder="password"
+			name="adminusername" /> <label class="label" for="adminpassword">Password*</label>
+		<input class="input" type="password" placeholder="password"
 			id="adminpassword" name="adminpassword" />
 
-		<BUTTON class="buttonlogin" name="method" value="adminlogin">Log
-			In</BUTTON>
+		<button class="buttonlogin" name="method" value="adminlogin">Log
+			In</button>
 	</form>
 
 
