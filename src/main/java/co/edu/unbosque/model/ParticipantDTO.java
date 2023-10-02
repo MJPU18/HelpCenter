@@ -104,4 +104,10 @@ public class ParticipantDTO extends PersonDTO {
 		this.nickName = nickName;
 	}
 
+	@Override
+	public String toString() {
+		return "ParticipantDTO [participatedSessions=" + participatedSessions + ", nickName=" + nickName + ", UserName="
+				+ getUserName() + ", Password=" + getPassword() + ", Name=" + getName() + ", Document=" + getDocument()
+				+ ", DateOfBirth=" + getDateOfBirth() + ", CityOfBirth()=" + getCityOfBirth() + "]";
+	}
 }
