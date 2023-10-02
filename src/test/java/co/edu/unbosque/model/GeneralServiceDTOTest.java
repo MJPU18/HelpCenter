@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
  * @author Joann Alejandro Zamudio
  * @author Jeisson Nicolas Uyaban
  */
-public class GeneralServiceDTOTest extends PersonDTOTest {
+public class GeneralServiceDTOTest {
 
 	private static int counter = 0;
 

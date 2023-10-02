@@ -24,11 +24,11 @@ public class DBConnection {
 	private Statement statement = null;
 	private PreparedStatement preparedstatement = null;
 	private ResultSet resultset = null;
-	private final String IP = "127.0.0.1";
-	private final String PORT = "3336";
-	private final String DATABASE = "helpcenter";
+	private final String IP = "35.239.57.35";
+	private final String PORT = "3306";
+	private final String DATABASE = "uyabanNicolas";
 	private final String USERNAME = "root";
-	private final String PASSWORD = "Blue.2004";
+	private final String PASSWORD = "programacion2";
 
 	/**
 	 * Create an object of class DBConnection
