@@ -50,13 +50,13 @@ function hideParticipantForm() {
 /*-------------------------*/
 
 function showPsychologistForm() {
-	var form = document.getElementById("psychologistform");
+	var form = document.getElementById("psychform");
 	form.style.display = "flex";
 	hideLogin();
 }
 
 function hidePsychologistForm() {
-	var form = document.getElementById("psychologistform");
+	var form = document.getElementById("psychform");
 	form.style.display = "none";
 }
 
@@ -141,13 +141,5 @@ document.addEventListener('DOMContentLoaded', function() {
 			selectedUserType = event.target.textContent.trim();
 		}
 	});
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-
-	document.getElementById("psychologistform").addEventListener('submit', function(event) {
-		event.preventDefault();
-	});
-
 });
 

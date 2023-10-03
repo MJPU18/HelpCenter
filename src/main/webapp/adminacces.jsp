@@ -53,7 +53,6 @@
 		</div>
 
 	</form>
-
 	<div class="buttons">
 		<div class="col-12">
 			<button class="btn btn-primary" id="method" name="method"
@@ -83,6 +82,18 @@
 			<button class="btn btn-primary" id="method" name="method"
 				value="update" onclick="showUptPsychForm();">Update
 				Psychologist</button>
+		</div>
+		<div class="col-12">
+			<button class="btn btn-primary" id="method" name="method"
+				value="delete" onclick="showDelPartForm();">Delete Participant</button>
+		</div>
+		<div class="col-12">
+			<button class="btn btn-primary" id="method" name="method"
+				value="delete" onclick="showDelServForm();">Delete Service</button>
+		</div>
+		<div class="col-12">
+			<button class="btn btn-primary" id="method" name="method"
+				value="delete" onclick="showDelPsychForm();">Delete Psychologist</button>
 		</div>
 	</div>
 
@@ -279,40 +290,40 @@
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Username:</label>
 			<input type="text" class="form-control" id="partactusername"
-				name="participantusername" placeholder="Username"></input>
+				name="partactusername" placeholder="Username"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantpassword" class="form-label">Password:</label>
 			<input type="password" class="form-control" id="partactpassword"
-				name="participantpassword" placeholder="Password"></input>
+				name="partactpassword" placeholder="Password"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantname" class="form-label">Name:</label> <input
-				type="text" class="form-control" id="partactname"
-				name="participantname" placeholder="Name"></input>
+				type="text" class="form-control" id="partactname" name="partactname"
+				placeholder="Name"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantdocument" class="form-label">Document:</label>
 			<input type="text" class="form-control" id="partactdocument"
-				name="participantdocument" placeholder="Document" step="1"
+				name="partactdocument" placeholder="Document" step="1"
 				onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"
 				onblur="validateDocument(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantdateofbirth" class="form-label">Date
 				of Birth</label> <input type="date" class="form-control"
-				id="participantdateofbirth" name="partactdateofbirth"
+				id="partactdateofbirth" name="partactdateofbirth"
 				placeholder="Date of Birth" onchange="validateYear(this)"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantcity" class="form-label">City:</label> <input
-				type="text" class="form-control" id="partactcity"
-				name="participantcity" placeholder="City"></input>
+				type="text" class="form-control" id="partactcity" name="partactcity"
+				placeholder="City"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantnickname" class="form-label">Nickname:</label>
 			<input type="text" class="form-control" id="partactnickname"
-				name="participantnickname" placeholder="Nickname"></input>
+				name="partactnickname" placeholder="Nickname"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participatedsessions" class="form-label">Participated
@@ -458,6 +469,45 @@
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
 				name="method" value="psycactconf" onclick="hideUptPsychForm();">Confirm</button>
+		</div>
+	</form>
+
+	<form action="usercontrollerservlet" method="post"
+		class="row g-3 container" id="formdeletepart">
+		<div class="col-md-6">
+			<label for="deletepart" class="form-label">Index:</label> <input
+				type="number" class="form-control" id="deletepart" name="deletepart"
+				placeholder="Index" min="0"></input>
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" id="method"
+				name="method" value="partdelete" onclick="hideDelPartForm();">Confirm</button>
+		</div>
+	</form>
+	
+	<form action="usercontrollerservlet" method="post"
+		class="row g-3 container" id="formdeletepsych">
+		<div class="col-md-6">
+			<label for="deletepsych" class="form-label">Index:</label> <input
+				type="number" class="form-control" id="deletepsych" name="deletepsych"
+				placeholder="Index" min="0"></input>
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" id="method"
+				name="method" value="psychdelete" onclick="hideDelPsychForm();">Confirm</button>
+		</div>
+	</form>
+	
+	<form action="usercontrollerservlet" method="post"
+		class="row g-3 container" id="formdeleteserv">
+		<div class="col-md-6">
+			<label for="deletepart" class="form-label">Index:</label> <input
+				type="number" class="form-control" id="deleteserv" name="deleteserv"
+				placeholder="Index" min="0"></input>
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" id="method"
+				name="method" value="servdelete" onclick="hideDelServForm();">Confirm</button>
 		</div>
 	</form>
 </body>

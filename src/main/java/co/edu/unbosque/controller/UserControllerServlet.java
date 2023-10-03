@@ -107,15 +107,15 @@ public class UserControllerServlet extends HttpServlet {
 			String password = req.getParameter("participantpassword");
 			String name = req.getParameter("participantname");
 			String document = req.getParameter("participantdocument");
-			String[] date = req.getParameter("participantdateofbirth").split("/");
-			LocalDate birth = LocalDate.of(Integer.parseInt(date[2]), Month.of(Integer.parseInt(date[1])),
-					Integer.parseInt(date[0]));
+			String date = req.getParameter("participantdateofbirth");
 			String city = req.getParameter("participantcity");
 			String nickname = req.getParameter("participantnickname");
 			String psessions = req.getParameter("participatedsessions");
 
-			pdao.create(new ParticipantDTO(username, password, name, Long.parseLong(document), birth, city,
+			pdao.create(new ParticipantDTO(username, password, name, Long.parseLong(document), LocalDate.parse(date), city,
 					Integer.parseInt(psessions), nickname));
+			RequestDispatcher rd= req.getRequestDispatcher("index.jsp");
+			rd.forward(req, resp);
 			System.out.println(pdao.getListParticipants().get(0).toString());
 
 		} else if (method.equals("psychconf")) {
@@ -124,18 +124,18 @@ public class UserControllerServlet extends HttpServlet {
 			String password = req.getParameter("psychologistpassword");
 			String name = req.getParameter("psychologistname");
 			String document = req.getParameter("psychologistdocument");
-			String[] date = req.getParameter("psychologistdateofbirth").split("/");
-			LocalDate birth = LocalDate.of(Integer.parseInt(date[2]), Month.of(Integer.parseInt(date[1])),
-					Integer.parseInt(date[0]));
+			String date = req.getParameter("psychologistdateofbirth");
 			String city = req.getParameter("psychologistcity");
 			String gYear = req.getParameter("gradyear");
 			String daysService = req.getParameter("daysinservice");
 			String sSupported = req.getParameter("sessionssupported");
 			String Salary = req.getParameter("psychologistsalary");
 
-			sdao.create(new PsychologistDTO(username, password, name, Long.parseLong(document), birth, city,
+			sdao.create(new PsychologistDTO(username, password, name, Long.parseLong(document), LocalDate.parse(date), city,
 					Year.parse(gYear), Integer.parseInt(daysService), Integer.parseInt(sSupported),
 					Double.parseDouble(Salary)));
+			RequestDispatcher rd= req.getRequestDispatcher("index.jsp");
+			rd.forward(req, resp);
 			System.out.println(sdao.getListPsychologists().get(0).getName());
 
 		} else if (method.equals("servconf")) {
@@ -144,16 +144,15 @@ public class UserControllerServlet extends HttpServlet {
 			String password = req.getParameter("servicepassword");
 			String name = req.getParameter("servicename");
 			String document = req.getParameter("servicedocument");
-			String[] date = req.getParameter("servicedateofbirth").split("/");
-			LocalDate birth = LocalDate.of(Integer.parseInt(date[2]), Month.of(Integer.parseInt(date[1])),
-					Integer.parseInt(date[0]));
+			String date = req.getParameter("servicedateofbirth");
 			String city = req.getParameter("servicecity");
 			String salary = req.getParameter("servicesalary");
 			String csessions = req.getParameter("sessionscleaned");
 
-			gdao.create(new GeneralServiceDTO(username, password, name, Long.parseLong(document), birth, city,
+			gdao.create(new GeneralServiceDTO(username, password, name, Long.parseLong(document), LocalDate.parse(date), city,
 					Double.parseDouble(salary), Integer.parseInt(csessions)));
-
+			RequestDispatcher rd= req.getRequestDispatcher("index.jsp");
+			rd.forward(req, resp);
 			System.out.println(gdao.getListGeneralService().get(0).toString());
 		} else if (method.contains("show")) {
 
@@ -244,6 +243,56 @@ public class UserControllerServlet extends HttpServlet {
 			out.println("</div>");
 			out.println("</body");
 			out.println("</html");
+		}
+		else if(method.equals("updatepartconf")) {
+			int index= Integer.parseInt(req.getParameter("partactindex"));
+			String username =req.getParameter("partactusername");
+			String password = req.getParameter("partactpassword");
+			String name = req.getParameter("partactname");
+			long document = Long.parseLong(req.getParameter("partactdocument"));
+			String date = req.getParameter("partactdateofbirth");
+			String city = req.getParameter("partactcity");
+			String nickname = req.getParameter("partactnickname");
+			int psessions = Integer.parseInt(req.getParameter("participatedsessionsact"));
+			pdao.update(index, new ParticipantDTO(username, password, name, document, LocalDate.parse(date), city, psessions, nickname));
+		}
+		else if(method.equals("psycactconf")) {
+			int index=Integer.parseInt(req.getParameter("psycactindex"));
+			String username = req.getParameter("psycactusername");
+			String password = req.getParameter("psycactpassword");
+			String name = req.getParameter("psycactname");
+			long document = Long.parseLong(req.getParameter("psycactdocument"));
+			String date = req.getParameter("psycactdateofbirth");
+			String city = req.getParameter("psycactcity");
+			String gYear = req.getParameter("psycactgradyear");
+			int daysService = Integer.parseInt(req.getParameter("psycactdaysinservice"));
+			int sSupported = Integer.parseInt(req.getParameter("psycactsessionss"));
+			double Salary = Double.parseDouble(req.getParameter("psycactsalary"));
+			sdao.update(index, new PsychologistDTO(username, password, name, document, LocalDate.parse(date), city, Year.parse(gYear), daysService, sSupported, Salary) );
+		}
+		else if(method.equals("updateservconf")) {
+			int index=Integer.parseInt(req.getParameter("servactindex"));
+			String username = req.getParameter("servactusername");
+			String password = req.getParameter("servactpassword");
+			String name = req.getParameter("servactname");
+			long document = Long.parseLong(req.getParameter("servactdocument"));
+			String date = req.getParameter("servactdateofbirth");
+			String city = req.getParameter("servactcity");
+			double salary = Double.parseDouble(req.getParameter("servactsalary"));
+			int csessions = Integer.parseInt(req.getParameter("sessionscleannedact"));
+			gdao.update(index, new GeneralServiceDTO(username, password, name, document, LocalDate.parse(date), city, salary, csessions));
+		}
+		else if(method.equals("partdelete")) {
+			int index=Integer.parseInt(req.getParameter("deletepart"));
+			pdao.delete(index);
+		}
+		else if(method.equals("psychdelete")) {
+			int index=Integer.parseInt(req.getParameter("deletepsych"));
+			sdao.delete(index);
+		}
+		else if(method.equals("servdelete")) {
+			int index=Integer.parseInt(req.getParameter("deleteserv"));
+			gdao.delete(index);
 		}
 		out.close();
 	}
