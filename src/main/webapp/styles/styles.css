@@ -1,6 +1,6 @@
 .container {
 	width: 90%;
-	margin-top: 5px;
+	margin-top: 50px;
 	height: 100%;
 	position: absolute;
 	transform: translate(-50%,-50%);
@@ -28,6 +28,7 @@
 	background-color: #001d3d;
 	padding: 17px;
 	justify-content: space-between;
+	overflow-x: auto;
 }
 
 .fa.fa-home.fa-2x {
