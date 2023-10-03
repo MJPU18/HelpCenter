@@ -132,9 +132,7 @@ public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
 				String password = dbcon.getResultset().getString("userpassword");
 				String name = dbcon.getResultset().getString("personname");
 				long document = dbcon.getResultset().getLong("document");
-				LocalDate dateOfBirth = LocalDate.of(dbcon.getResultset().getDate("dateofbirth").getDay(),
-						Month.of(dbcon.getResultset().getDate("dateofbirth").getMonth()),
-						dbcon.getResultset().getDate("dateofbirth").getYear());
+				LocalDate dateOfBirth = dbcon.getResultset().getDate("dateofbirth").toLocalDate();
 				String cityOfBirth = dbcon.getResultset().getString("cityofbirth");
 				double salary = dbcon.getResultset().getDouble("salary");
 				int sessionsCleaned = dbcon.getResultset().getInt("sessionscleaned");

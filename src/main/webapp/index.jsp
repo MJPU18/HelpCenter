@@ -33,7 +33,7 @@
 	<div class="header sticky-top">
 
 		<div class="backbutton">
-			<button type ="button" class="fa fa-home fa-2x"
+			<button type="button" class="fa fa-home fa-2x"
 				onclick="showStart(); hideFigure(); hideAdmin(); hideLogin(); hideParticipantForm(); hidePsychologistForm(); hideServiceForm()">
 			</button>
 		</div>
@@ -81,8 +81,9 @@
 			In</button>
 
 		<div class="container2">
-			<a href="#" class="access" onclick="hideFigure(); showForm(); return false;">register</a>
-			<a href="#" class="access2" onclick="hideFigure(); showAdmin();">admin</a>
+			<a href="#" class="access"
+				onclick="hideFigure(); showForm(); return false;">register</a> <a
+				href="#" class="access2" onclick="hideFigure(); showAdmin();">admin</a>
 		</div>
 	</form>
 
@@ -167,7 +168,7 @@
 
 	<!--                           form psychologist                                -->
 
-	<form class="row g-3 container" id="psychologistform"
+	<!--<form class="row g-3 container" id="psychologistform"
 		action="usercontrollerservlet" method="post">
 		<div class="col-md-6">
 			<label for="psychologistusername" class="form-label">Username:</label>
@@ -232,13 +233,7 @@
 				name="psychologistsalary" placeholder="Salary" min="0"></input>
 		</div>
 
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="psychconf"
-				onclick="hidePsychologistForm(); showStart()">Confirm</button>
-		</div>
-
-	</form>
+	</form>-->
 
 	<!--                         form service                         -->
 
@@ -300,6 +295,78 @@
 				onclick="hideServiceForm(); showStart()">Confirm</button>
 		</div>
 
+	</form>
+	
+	<form action="usercontrollerservlet" method="post"
+		class="row g-3 container" id="psychform">
+		<div class="col-md-6">
+			<label for="psychologistusername" class="form-label">Username:</label>
+			<input type="text" class="form-control" id="psychologistusername"
+				name="psychologistusername" placeholder="Username"></input>
+		</div>
+		<div class="col-md-6">
+			<label for="psychologistpassword" class="form-label">Password:</label>
+			<input type="password" class="form-control" id="psychologistpassword"
+				name="psychologistpassword" placeholder="Password"></input>
+		</div>
+		<div class="col-12">
+			<label for="psychologistname" class="form-label">Name:</label> <input
+				type="text" class="form-control" id="psychologistname"
+				name="psychologistname" placeholder="Name"></input>
+		</div>
+
+		<div class="col-md-6">
+			<label for="psychologistdocument" class="form-label">Document:</label>
+			<input type="text" class="form-control" id="psychologistdocument"
+				name="psychologistdocument" placeholder="Document" step="1"
+				onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"
+				onblur="validateDocument(this)" min="0"></input>
+		</div>
+		<div class="col-md-6">
+			<label for="psychologistdateofbirth" class="form-label">Date
+				of Birth</label> <input type="date" class="form-control"
+				id="psychologistdateofbirth" name="psychologistdateofbirth"
+				placeholder="Date of Birth" onchange="validateYear(this)"></input>
+		</div>
+
+
+		<div class="col-12">
+			<label for="psychologistcity" class="form-label">City:</label> <input
+				type="text" class="form-control" id="psychologistcity"
+				name="psychologistcity" placeholder="City"></input>
+		</div>
+
+		<div class="col-md-6">
+			<label for="gradyear" class="form-label">Graduation Year:</label> <input
+				type="number" class="form-control" id="gradyear" name="gradyear"
+				min="1950" max="2100" step="1" placeholder="Graduation Year"></input>
+		</div>
+
+		<div class="col-md-6">
+			<label for="daysinservice" class="form-label">Days in
+				Service:</label> <input type="number" class="form-control"
+				id="daysinservice" name="daysinservice"
+				placeholder="Days in service" readonly="readonly"></input>
+		</div>
+
+		<div class="col-md-6">
+			<label for="servicesalary" class="form-label">Sessions
+				Supported:</label> <input type="number" class="form-control"
+				id="sessionssupported" name="sessionssupported"
+				placeholder="Sessions Supported" min="0" step="1"></input>
+		</div>
+
+		<div class="col-md-6">
+			<label for="psychologistsalary" class="form-label">Salary:</label> <input
+				type="number" class="form-control" id="psychologistsalary"
+				name="psychologistsalary" placeholder="Salary" min="0"></input>
+		</div>
+		
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" id="method"
+				name="method" value="psychconf"
+				onclick=" hidePsychologistForm(); showStart()">Confirm</button>
+		</div>
 	</form>
 
 </body>
