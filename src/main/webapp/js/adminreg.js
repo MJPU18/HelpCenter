@@ -88,17 +88,29 @@ window.onload = function() {
 	hideDelPsychForm();
 	hideDelServForm();
 }
-document.getElementById("gradyear").addEventListener('input', function() {
 
-	var gradYear = this.value;
-	var currentYear = new Date().getFullYear();
-	var serviceDays = (currentYear - gradYear) * 365;
-	document.getElementById("daysinservice").value = serviceDays;
-});
-document.getElementById("psycactgradyear").addEventListener('input', function() {
+document.addEventListener("DOMContentLoaded", function() {
 
-	var gradYear = this.value;
-	var currentYear = new Date().getFullYear();
-	var serviceDays = (currentYear - gradYear) * 365;
-	document.getElementById("psycactdaysinservice").value = serviceDays;
+	document.getElementById("gradyear").addEventListener('input', function() {
+
+		var gradYear = this.value;
+		var currentYear = new Date().getFullYear();
+		var serviceDays = (currentYear - gradYear) * 365;
+		document.getElementById("daysinservice").value = serviceDays;
+	});
+
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+
+	document.getElementById("psycactgradyear").addEventListener('input', function() {
+
+		var gradYear = this.value;
+		var currentYear = new Date().getFullYear();
+		var serviceDays = (currentYear - gradYear) * 365;
+		document.getElementById("psycactdaysinservice").value = serviceDays;
+	});
+
+});
+
+

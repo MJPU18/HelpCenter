@@ -28,73 +28,41 @@
 </head>
 <body>
 
-	<DIV class="header">
+	<div class="header sticky-top">
 		<div class="backbutton">
 			<button type="button" class="fa fa-home fa-2x"
 				onclick="window.history.back();"></button>
 		</div>
-	</DIV>
-	<form action="usercontrollerservlet" method="post">
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="showparticipants">Show Participants</button>
-		</div>
-	</form>
-	<form action="usercontrollerservlet" method="post">
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="showservice">Show Service</button>
-		</div>
-	</form>
-	<form action="usercontrollerservlet" method="post">
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary" id="method"
-				name="method" value="showpsychologist">Show Psychologist</button>
-		</div>
-
-	</form>
-	<div class="buttons">
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showRegPartForm();">Register
-				Participants</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showRegPsychForm();">Register
-				Psychologist</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showRegServForm();">Register
-				Service</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showUptPartForm();">Update
-				Participant</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showUptServForm();">Update Service</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="update" onclick="showUptPsychForm();">Update
-				Psychologist</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="delete" onclick="showDelPartForm();">Delete Participant</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="delete" onclick="showDelServForm();">Delete Service</button>
-		</div>
-		<div class="col-12">
-			<button class="btn btn-primary" id="method" name="method"
-				value="delete" onclick="showDelPsychForm();">Delete Psychologist</button>
-		</div>
+		
+		<form action="usercontrollerservlet" method="post">
+		<button type="submit" class="btn btn-outline-primary" id="method" name="method" value="showparticipants">Show Participants</button>
+		</form>
+		
+		<form action="usercontrollerservlet" method="post">
+		<button type="submit" class="btn btn-outline-primary" id="method" name="method" value="showservice">Show Service</button>
+		</form>
+		
+		<form action="usercontrollerservlet" method="post">
+		<button type="submit" class="btn btn-outline-primary" id="method" name="method" value="showpsychologist">Show Psychologist</button>
+		</form>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showRegPartForm(); hideRegServForm() ; hideRegPsychForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Register Participants</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showRegPsychForm(); hideRegPartForm() ; hideRegServForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Register Psychologist</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showRegServForm(); hideRegPartForm() ; hideRegPsychForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Register Service</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method"value="update" onclick="showUptPartForm(); hideRegPartForm() ; hideRegServForm() ; hideRegPsychForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Update Participant</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showUptPsychForm(); hideRegPartForm() ; hideRegServForm() ; hideRegPsychForm() ; hideUptPartForm() ; hideUptServForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Update Psychologist</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="update" onclick="showUptServForm(); hideRegPartForm() ; hideRegServForm() ; hideRegPsychForm() ; hideUptPartForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm() ; hideDelServForm()">Update Service</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="delete" onclick="showDelPartForm(); hideRegPartForm() ; hideRegPsychForm() ; hideRegServForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPsychForm() ; hideDelServForm()">Delete Participant</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="delete" onclick="showDelPsychForm(); hideRegPartForm() ; hideRegPsychForm() ; hideRegServForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelServForm()">Delete Psychologist</button>
+		
+		<button class="btn btn-outline-primary" id="method" name="method" value="delete" onclick="showDelServForm(); hideRegPartForm() ; hideRegPsychForm() ; hideRegServForm() ; hideUptPartForm() ; hideUptServForm() ; hideUptPsychForm() ; hideDelPartForm() ; hideDelPsychForm()">Delete Service</button>
 	</div>
 
 
@@ -475,7 +443,7 @@
 	<form action="usercontrollerservlet" method="post"
 		class="row g-3 container" id="formdeletepart">
 		<div class="col-md-6">
-			<label for="deletepart" class="form-label">Index:</label> <input
+			<label for="deletepart" class="form-label">Index Participant:</label> <input
 				type="number" class="form-control" id="deletepart" name="deletepart"
 				placeholder="Index" min="0"></input>
 		</div>
@@ -488,7 +456,7 @@
 	<form action="usercontrollerservlet" method="post"
 		class="row g-3 container" id="formdeletepsych">
 		<div class="col-md-6">
-			<label for="deletepsych" class="form-label">Index:</label> <input
+			<label for="deletepsych" class="form-label">Index Psychologist:</label> <input
 				type="number" class="form-control" id="deletepsych" name="deletepsych"
 				placeholder="Index" min="0"></input>
 		</div>
@@ -501,7 +469,7 @@
 	<form action="usercontrollerservlet" method="post"
 		class="row g-3 container" id="formdeleteserv">
 		<div class="col-md-6">
-			<label for="deletepart" class="form-label">Index:</label> <input
+			<label for="deletepart" class="form-label">Index Service:</label> <input
 				type="number" class="form-control" id="deleteserv" name="deleteserv"
 				placeholder="Index" min="0"></input>
 		</div>
