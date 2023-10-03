@@ -285,7 +285,7 @@ public class PersonDTOTest {
 		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 
-		LocalDate dateaux = LocalDate.of(2000, Month.of(01), 01);
+		LocalDate dateaux = LocalDate.of(2000, Month.of(01), 02);
 
 		PersonDTO aux = new PersonDTO(userName, password, name, document, date, city);
 
@@ -559,7 +559,7 @@ public class PersonDTOTest {
 		LocalDate date = LocalDate.of(2000, Month.of(01), 01);
 		String city = "Pacho";
 
-		LocalDate dateaux = LocalDate.of(2000, Month.of(01), 01);
+		LocalDate dateaux = LocalDate.of(2000, Month.of(01), 02);
 
 		PersonDTO aux = new PersonDTO(userName, password, name, document, date, city);
 
