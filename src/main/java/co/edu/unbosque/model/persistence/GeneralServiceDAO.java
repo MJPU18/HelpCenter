@@ -108,6 +108,7 @@ public class GeneralServiceDAO implements CRUDoperation<GeneralServiceDTO> {
 					dbcon.getConnect().prepareStatement("DELETE FROM generalservice WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
+			dbcon.close();
 			return listGeneralService.remove(index);
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -107,6 +107,7 @@ public class ParticipantDAO implements CRUDoperation<ParticipantDTO> {
 					dbcon.getConnect().prepareStatement("DELETE FROM participants WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
+			dbcon.close();
 			return listParticipants.remove(index);
 		} catch (SQLException e) {
 			e.printStackTrace();
