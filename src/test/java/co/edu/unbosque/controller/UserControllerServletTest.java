@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +18,11 @@ import co.edu.unbosque.model.ParticipantDTO;
 import co.edu.unbosque.model.PersonDTO;
 import co.edu.unbosque.model.PsychologistDTO;
 import co.edu.unbosque.model.persistence.GeneralServiceDAO;
+import co.edu.unbosque.model.persistence.GeneralServiceDAOForTest;
 import co.edu.unbosque.model.persistence.ParticipantDAO;
+import co.edu.unbosque.model.persistence.ParticipantDAOForTest;
 import co.edu.unbosque.model.persistence.PsychologistDAO;
+import co.edu.unbosque.model.persistence.PsychologistDAOForTest;
 
 /**
  * 
@@ -50,9 +54,9 @@ public class UserControllerServletTest {
 
 	public boolean doPost(String type) {
 
-		ParticipantDAO a = new ParticipantDAO();
-		PsychologistDAO b = new PsychologistDAO();
-		GeneralServiceDAO c = new GeneralServiceDAO();
+		ParticipantDAOForTest a = new ParticipantDAOForTest();
+		PsychologistDAOForTest b = new PsychologistDAOForTest();
+		GeneralServiceDAOForTest c = new GeneralServiceDAOForTest();
 
 		Random rd = new Random();
 		Random rd2 = new Random();
@@ -62,10 +66,10 @@ public class UserControllerServletTest {
 
 		if (method.equalsIgnoreCase("partconf")) {
 
-			String username = rd2.nextLong() + "";
-			String password = rd.nextLong() + "";
+			String username = rd2.nextLong() + rd.nextDouble() + "";
+			String password = rd.nextLong() + rd2.nextDouble() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
@@ -75,16 +79,17 @@ public class UserControllerServletTest {
 			a.create(new ParticipantDTO(username, password, name, document, LocalDate.parse(date, format), city,
 					Integer.parseInt(psessions), nickname));
 
+			a.delete(0);
+
 			return true;
 
 		} else if (method.equalsIgnoreCase("psychconf")) {
 
-			String username = rd2.nextLong() + "";
+			String username = rd2.nextLong() + rd.nextDouble() + "";
 			String password = rd.nextLong() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
 			String year = "2000";
 			String daysService = "13";
@@ -95,6 +100,8 @@ public class UserControllerServletTest {
 					Year.parse(year), Integer.parseInt(daysService), Integer.parseInt(sSupported),
 					Double.parseDouble(salary)));
 
+			b.delete(0);
+
 			return true;
 
 		} else if (method.equalsIgnoreCase("servconf")) {
@@ -102,15 +109,16 @@ public class UserControllerServletTest {
 			String username = rd2.nextLong() + "";
 			String password = rd.nextLong() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
 			String csessions = "2";
 			String salary = "10000000";
 
 			c.create(new GeneralServiceDTO(username, password, name, document, LocalDate.parse(date), city,
 					Double.parseDouble(salary), Integer.parseInt(csessions)));
+
+			c.delete(0);
 
 			return true;
 
@@ -143,15 +151,20 @@ public class UserControllerServletTest {
 			String username = rd2.nextLong() + "";
 			String password = rd.nextLong() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
 			String nickname = "Jarto777";
 			String psessions = "5";
 
+			a.create(new ParticipantDTO(username, password, name, document, LocalDate.parse(date, format), city,
+					Integer.parseInt(psessions), nickname));
+
 			a.update(0, new ParticipantDTO(username, password, name, document, LocalDate.parse(date, format), city,
 					Integer.parseInt(psessions), nickname));
+
+			a.delete(0);
 
 			return true;
 
@@ -162,19 +175,24 @@ public class UserControllerServletTest {
 			String username = rd2.nextLong() + "";
 			String password = rd.nextLong() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
 			String year = "2000";
 			String daysService = "13";
 			String sSupported = "2";
 			String salary = "10000000";
 
+			b.create(new PsychologistDTO(username, password, name, document, LocalDate.parse(date), city,
+					Year.parse(year), Integer.parseInt(daysService), Integer.parseInt(sSupported),
+					Double.parseDouble(salary)));
+
 			b.update(0,
 					new PsychologistDTO(username, password, name, document, LocalDate.parse(date), city,
 							Year.parse(year), Integer.parseInt(daysService), Integer.parseInt(sSupported),
 							Double.parseDouble(salary)));
+
+			b.delete(0);
 
 			return true;
 
@@ -185,9 +203,8 @@ public class UserControllerServletTest {
 			String username = rd2.nextLong() + "";
 			String password = rd.nextLong() + "";
 			String name = "New Test";
-			long document = rd3.nextLong();
+			long document = rd3.nextLong() + rd.nextLong();
 			String date = "2000-01-01";
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String city = "Pacho";
 			String csessions = "2";
 			String salary = "10000000";
@@ -198,23 +215,62 @@ public class UserControllerServletTest {
 			c.update(0, new GeneralServiceDTO(username, password, name, document, LocalDate.parse(date), city,
 					Double.parseDouble(salary), Integer.parseInt(csessions)));
 
+			c.delete(0);
+
 			return true;
 
 		} else if (method.equals("partdelete")) {
 
 			int index = 0;
+			String username = rd2.nextLong() + "";
+			String password = rd.nextLong() + "";
+			String name = "New Test";
+			long document = rd3.nextLong() + rd.nextLong();
+			String date = "2000-01-01";
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			String city = "Pacho";
+			String nickname = "Jarto777";
+			String psessions = "5";
+
+			a.create(new ParticipantDTO(username, password, name, document, LocalDate.parse(date, format), city,
+					Integer.parseInt(psessions), nickname));
 			a.delete(index);
 			return true;
 
 		} else if (method.equals("psychdelete")) {
 
 			int index = 0;
+			String username = rd2.nextLong() + rd.nextDouble() + "";
+			String password = rd.nextLong() + "";
+			String name = "New Test";
+			long document = rd3.nextLong() + rd.nextLong();
+			String date = "2000-01-01";
+			String city = "Pacho";
+			String year = "2000";
+			String daysService = "13";
+			String sSupported = "2";
+			String salary = "10000000";
+
+			b.create(new PsychologistDTO(username, password, name, document, LocalDate.parse(date), city,
+					Year.parse(year), Integer.parseInt(daysService), Integer.parseInt(sSupported),
+					Double.parseDouble(salary)));
 			b.delete(index);
 			return true;
 
 		} else if (method.equals("servdelete")) {
 
 			int index = 0;
+			String username = rd2.nextLong() + "";
+			String password = rd.nextLong() + "";
+			String name = "New Test";
+			long document = rd3.nextLong() + rd.nextLong();
+			String date = "2000-01-01";
+			String city = "Pacho";
+			String csessions = "2";
+			String salary = "10000000";
+
+			c.create(new GeneralServiceDTO(username, password, name, document, LocalDate.parse(date), city,
+					Double.parseDouble(salary), Integer.parseInt(csessions)));
 			c.delete(index);
 			return true;
 
@@ -351,6 +407,13 @@ public class UserControllerServletTest {
 		boolean aux = doPost("servdelete");
 
 		assertEquals(true, aux);
+
+	}
+
+	@AfterAll
+	public static void end() {
+
+		System.err.println("\n have been executed " + counter + " test");
 
 	}
 
