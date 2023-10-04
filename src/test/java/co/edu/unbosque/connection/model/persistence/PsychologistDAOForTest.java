@@ -11,6 +11,11 @@ import co.edu.unbosque.controller.DBConnection;
 import co.edu.unbosque.model.PsychologistDTO;
 import co.edu.unbosque.model.persistence.CRUDoperation;
 
+/**
+ * This class is the same representation of a psychologist person, but focused
+ * directly on recording evidence.*
+ */
+
 public class PsychologistDAOForTest implements CRUDoperation<PsychologistDTO> {
 
 	private ArrayList<PsychologistDTO> listPsychologists;

@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * The DBConnection class handles database connections. It provides methods to
- * initialize a connection, close database resources, and getters/setters for
- * database connection parameters.
+ * A parallel class to DBConnection is created in order to change the test
+ * database it points to. Two databases are used, one that records real users
+ * and another that records testing. database connection parameters.
  * 
  * @author Juan Pablo Urrego
  * @author Javier Meza Montero
@@ -31,13 +31,13 @@ public class DBConnectionForTest {
 	private final String PASSWORD = "programacion2";
 
 	/**
-	 * Create an object of class DBConnection
+	 * Create an object of class DBConnectionForTest
 	 */
 	public DBConnectionForTest() {
 	}
 
 	/**
-	 * Initializes the database connection.
+	 * Initializes the test database connection to the test database.
 	 */
 	public void initConnection() {
 		try {
@@ -55,7 +55,7 @@ public class DBConnectionForTest {
 	}
 
 	/**
-	 * Closes the database resources.
+	 * Closes the test database resources.
 	 */
 	public void close() {
 		try {
@@ -74,18 +74,18 @@ public class DBConnectionForTest {
 	}
 
 	/**
-	 * Gets the database connection.
+	 * Gets the test database connection.
 	 *
-	 * @return The database connection.
+	 * @return the test database connection.
 	 */
 	public Connection getConnect() {
 		return connect;
 	}
 
 	/**
-	 * Sets the database connection.
+	 * Sets the test database connection.
 	 *
-	 * @param connect :The database connection to set.
+	 * @param connect :the test database connection to set.
 	 */
 	public void setConnect(Connection connect) {
 		this.connect = connect;
@@ -164,27 +164,27 @@ public class DBConnectionForTest {
 	}
 
 	/**
-	 * Gets the name of the database.
+	 * Gets the name of the test database.
 	 *
-	 * @return The name of the database.
+	 * @return The name of the test database.
 	 */
 	public String getDATABASE() {
 		return DATABASE;
 	}
 
 	/**
-	 * Gets the database username.
+	 * Gets the test database username.
 	 *
-	 * @return The database username.
+	 * @return the test database username.
 	 */
 	public String getUSERNAME() {
 		return USERNAME;
 	}
 
 	/**
-	 * Gets the database password.
+	 * Gets the test database password.
 	 *
-	 * @return The database password.
+	 * @return the test database password.
 	 */
 	public String getPASSWORD() {
 		return PASSWORD;
