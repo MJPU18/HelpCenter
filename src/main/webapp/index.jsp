@@ -22,6 +22,7 @@
 <script src="js/logins.js"></script>
 <script src="js/registration.js"></script>
 <script type="js/show.js"></script>
+<script src="js/inputcontroll.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -67,7 +68,7 @@
 		<div class="shape"></div>
 	</div>
 
-	<form class="formlogin" id="loginform" action="usercontrollerservlet"
+	<form name="login" class="formlogin" id="loginform" action="usercontrollerservlet"
 		method="post">
 		<h3 class="h3log">Login Participants</h3>
 
@@ -77,8 +78,7 @@
 		<input class="input" type="password" placeholder="password"
 			id="passwordlog" name="passwordlog" />
 
-		<button class="buttonlogin" name="method" value="login">Log
-			In</button>
+		<button class="buttonlogin" name="method" value="login" onclick="return validateLogin()">Log In</button>
 
 		<div class="container2">
 			<a href="#" class="access"
@@ -88,7 +88,7 @@
 	</form>
 
 
-	<form class="formlogin2" id="adminform" action="usercontrollerservlet"
+	<form name="loginadmin" class="formlogin2" id="adminform" action="usercontrollerservlet"
 		method="post">
 
 		<label class="label" for="adminusername">Username*</label> <input
@@ -97,7 +97,7 @@
 		<input class="input" type="password" placeholder="password"
 			id="adminpassword" name="adminpassword" />
 
-		<button class="buttonlogin" name="method" value="adminlogin">Log
+		<button class="buttonlogin" name="method" value="adminlogin" onclick="return validateLoginAdmin()">Log
 			In</button>
 	</form>
 
@@ -107,7 +107,7 @@
 
 	<!--                             form participant                                   -->
 	<form class="row g-3 container" id="participantform"
-		action="usercontrollerservlet" method="post">
+		action="usercontrollerservlet" method="post" onsubmit="return validatePartReg()">
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Username:</label>
 			<input type="text" class="form-control" id="participantusername"
@@ -121,7 +121,7 @@
 		<div class="col-12">
 			<label for="participantname" class="form-label">Name:</label> <input
 				type="text" class="form-control" id="participantname"
-				name="participantname" placeholder="Name"></input>
+				name="participantname" placeholder="Name" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
@@ -135,27 +135,27 @@
 			<label for="participantdateofbirth" class="form-label">Date
 				of Birth</label> <input type="date" class="form-control"
 				id="participantdateofbirth" name="participantdateofbirth"
-				placeholder="Date of Birth" onchange="validateYear(this)"></input>
+				placeholder="Date of Birth" onblur="validateYear(this)"></input>
 		</div>
 
 
 		<div class="col-12">
 			<label for="participantcity" class="form-label">City:</label> <input
 				type="text" class="form-control" id="participantcity"
-				name="participantcity" placeholder="City"></input>
+				name="participantcity" placeholder="City" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="participantnickname" class="form-label">Nickname:</label>
 			<input type="text" class="form-control" id="participantnickname"
-				name="participantnickname" placeholder="Nickname"></input>
+				name="participantnickname" placeholder="Nickname" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="participatedsessions" class="form-label">Participated
 				Sessions:</label> <input type="number" class="form-control"
 				id="participatedsessions" name="participatedsessions"
-				placeholder="Participated Sessions" min="0"></input>
+				placeholder="Participated Sessions" min="0" oninput="validateNumber(this)"></input>
 		</div>
 
 		<div class="col-12">
@@ -238,7 +238,7 @@
 	<!--                         form service                         -->
 
 	<form class="row g-3 container" id="serviceform"
-		action="usercontrollerservlet" method="post">
+		action="usercontrollerservlet" method="post" onsubmit="return validateServReg()">
 		<div class="col-md-6">
 			<label for="serviceusername" class="form-label">Username:</label> <input
 				type="text" class="form-control" id="serviceusername"
@@ -252,7 +252,7 @@
 		<div class="col-12">
 			<label for="servicename" class="form-label">Name:</label> <input
 				type="text" class="form-control" id="servicename" name="servicename"
-				placeholder="Name"></input>
+				placeholder="Name" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
@@ -266,27 +266,27 @@
 			<label for="servicedateofbirth" class="form-label">Date of
 				Birth</label> <input type="date" class="form-control"
 				id="servicedateofbirth" name="servicedateofbirth"
-				placeholder="Date of Birth" onchange="validateYear(this)"></input>
+				placeholder="Date of Birth" onblur="validateYear(this)"></input>
 		</div>
 
 
 		<div class="col-12">
 			<label for="servicecity" class="form-label">City:</label> <input
 				type="text" class="form-control" id="servicecity" name="servicecity"
-				placeholder="City"></input>
+				placeholder="City" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="servicesalary" class="form-label">Salary:</label> <input
 				type="number" class="form-control" id="servicesalary"
-				name="servicesalary" placeholder="Salary" min="0"></input>
+				name="servicesalary" placeholder="Salary" min="0" oninput="validateNumber(this)" step="0.1"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="sessionscleaned" class="form-label">Sessions
 				Cleaned:</label> <input type="number" class="form-control"
 				id="sessionscleaned" name="sessionscleaned"
-				placeholder="Sessions Cleaned" min="0"></input>
+				placeholder="Sessions Cleaned" min="0" oninput="validateNumber(this)"></input>
 		</div>
 
 		<div class="col-12">
@@ -297,8 +297,10 @@
 
 	</form>
 	
+	<!--                        form psychologist                 -->
+	
 	<form action="usercontrollerservlet" method="post"
-		class="row g-3 container" id="psychform">
+		class="row g-3 container" id="psychform" onsubmit="return validatePsychoReg()">
 		<div class="col-md-6">
 			<label for="psychologistusername" class="form-label">Username:</label>
 			<input type="text" class="form-control" id="psychologistusername"
@@ -312,7 +314,7 @@
 		<div class="col-12">
 			<label for="psychologistname" class="form-label">Name:</label> <input
 				type="text" class="form-control" id="psychologistname"
-				name="psychologistname" placeholder="Name"></input>
+				name="psychologistname" placeholder="Name" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
@@ -320,26 +322,26 @@
 			<input type="text" class="form-control" id="psychologistdocument"
 				name="psychologistdocument" placeholder="Document" step="1"
 				onkeypress="return event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57"
-				onblur="validateDocument(this)" min="0"></input>
+				onblur="validateDocument(this)" min="0" onblur="validateDocument(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="psychologistdateofbirth" class="form-label">Date
 				of Birth</label> <input type="date" class="form-control"
 				id="psychologistdateofbirth" name="psychologistdateofbirth"
-				placeholder="Date of Birth" onchange="validateYear(this)"></input>
+				placeholder="Date of Birth" onblur="validateYear(this)"></input>
 		</div>
 
 
 		<div class="col-12">
 			<label for="psychologistcity" class="form-label">City:</label> <input
 				type="text" class="form-control" id="psychologistcity"
-				name="psychologistcity" placeholder="City"></input>
+				name="psychologistcity" placeholder="City" oninput="validateInput(this)"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="gradyear" class="form-label">Graduation Year:</label> <input
 				type="number" class="form-control" id="gradyear" name="gradyear"
-				min="1950" max="2100" step="1" placeholder="Graduation Year"></input>
+				min="1950" max="2100" step="1" placeholder="Graduation Year" onblur="validateGradYear(this)"></input>
 		</div>
 
 		<div class="col-md-6">
@@ -353,13 +355,13 @@
 			<label for="servicesalary" class="form-label">Sessions
 				Supported:</label> <input type="number" class="form-control"
 				id="sessionssupported" name="sessionssupported"
-				placeholder="Sessions Supported" min="0" step="1"></input>
+				placeholder="Sessions Supported" min="0" step="1" oninput="validateNumber(this)"></input>
 		</div>
 
 		<div class="col-md-6">
 			<label for="psychologistsalary" class="form-label">Salary:</label> <input
 				type="number" class="form-control" id="psychologistsalary"
-				name="psychologistsalary" placeholder="Salary" min="0"></input>
+				name="psychologistsalary" placeholder="Salary" min="0" oninput="validateNumber(this)" step="0.1"></input>
 		</div>
 		
 		<div class="col-12">

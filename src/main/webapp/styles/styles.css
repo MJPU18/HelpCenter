@@ -188,8 +188,10 @@ body{
 }
 
 .paragraph{
-	position: absolute;
-	left: 150px;
+	position: relative;
+	display: inline;
+	left: 70px;
+	top: -50px;
 	width: 50%;
 	font-size: 55px;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
