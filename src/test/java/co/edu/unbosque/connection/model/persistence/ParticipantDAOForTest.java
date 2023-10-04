@@ -9,6 +9,11 @@ import co.edu.unbosque.connection.controller.DBConnectionForTest;
 import co.edu.unbosque.model.ParticipantDTO;
 import co.edu.unbosque.model.persistence.CRUDoperation;
 
+/**
+ * This class is the same representation of a participant person, but focused
+ * directly on recording evidence.*
+ */
+
 public class ParticipantDAOForTest implements CRUDoperation<ParticipantDTO> {
 
 	private ArrayList<ParticipantDTO> listParticipants;

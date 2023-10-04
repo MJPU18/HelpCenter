@@ -9,13 +9,23 @@ import co.edu.unbosque.connection.controller.DBConnectionForTest;
 import co.edu.unbosque.model.GeneralServiceDTO;
 import co.edu.unbosque.model.persistence.CRUDoperation;
 
+/**
+ * This class is the same representation of a general services person, but
+ * focused directly on recording evidence.
+ * 
+ * @author Juan Pablo Urrego
+ * @author Javier Meza Montero
+ * @author Juan Esteban Quintero
+ * @author Joann Alejandro Zamudio
+ * @author Jeisson Nicolas Uyaban
+ */
 public class GeneralServiceDAOForTest implements CRUDoperation<GeneralServiceDTO> {
 
 	private ArrayList<GeneralServiceDTO> listGeneralService;
 	private DBConnectionForTest dbcon;
 
 	/**
-	 * Create an object of class GeneralServiceDAO.
+	 * Create an object of class GeneralServiceDAO for testing.
 	 */
 	public GeneralServiceDAOForTest() {
 		dbcon = new DBConnectionForTest();

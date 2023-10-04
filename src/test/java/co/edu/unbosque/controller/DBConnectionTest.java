@@ -29,9 +29,21 @@ public class DBConnectionTest {
 
 	private static int counter = 0;
 
+	/**
+	 * Function used to tell the user when the test is starting.
+	 * 
+	 * @param name: the identifying label of the class to know what test is starting
+	 *              in real time.
+	 */
+
 	public static void start(String name) {
 		System.out.println("\n test called: " + name + ", number: " + counter + " starting");
 	}
+
+	/**
+	 * Design that always appears at the beginning and indicates the title of the
+	 * class being tested.
+	 */
 
 	@BeforeAll
 
@@ -40,6 +52,10 @@ public class DBConnectionTest {
 		System.err.println("\n______________ Starting all DBConnection unit tests _____________");
 
 	}
+
+	/**
+	 * Database initialization is tested with a positive result.
+	 */
 
 	@Test
 
@@ -71,6 +87,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Database initialization is tested with a negative result.
+	 */
+
 	public void initConnectionWrong() {
 
 		Connection connect = null;
@@ -100,6 +120,11 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * The test is carried out that the database is ending its execution with a
+	 * favorable result.
+	 */
+
 	public void closeSuccesfull() {
 
 		start("closeSuccesfull");
@@ -126,6 +151,11 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * The test is carried out that the database is ending its execution with a
+	 * unfavorable result
+	 */
 
 	public void closeWrong() {
 
@@ -155,6 +185,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the connect attribute information successfully.
+	 */
+
 	public void getConnectSucessful() {
 
 		start("getConnectSucessful");
@@ -163,6 +197,10 @@ public class DBConnectionTest {
 		assertEquals(null, db.getConnect());
 
 	}
+
+	/**
+	 * Obtains the connect attribute information unsuccessfully.
+	 */
 
 	@Test
 
@@ -187,6 +225,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the statement attribute information successfully.
+	 */
+
 	public void getStatementSucessful() {
 
 		start("getStatementSucessful");
@@ -195,6 +237,10 @@ public class DBConnectionTest {
 		assertEquals(null, db.getStatement());
 
 	}
+
+	/**
+	 * Obtains the statement attribute information unsuccessfully.
+	 */
 
 	@Test
 
@@ -223,6 +269,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the preparedStatement attribute information successfully.
+	 */
+
 	public void getPreparedStatementSuccesful() {
 
 		start("getPreparedStatementSuccesful");
@@ -233,6 +283,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * Obtains the preparedStatement attribute information unsuccessfully.
+	 */
 
 	public void getPreparedStatementWrong() {
 
@@ -262,6 +316,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the resultSet attribute information successfully.
+	 */
+
 	public void getResultSetSuccesful() {
 
 		start("getResultSetSuccesful");
@@ -272,6 +330,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * Obtains the resultSet attribute information unsuccessfully.
+	 */
 
 	public void getResultSetWrong() {
 
@@ -295,6 +357,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the IP attribute information successfully.
+	 */
+
 	public void getIPSucessful() {
 		start("getIPSucessful");
 		counter++;
@@ -306,6 +372,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * Obtains the IP attribute information unsuccessfully.
+	 */
 
 	public void getIPWrong() {
 		start("getIPWrong");
@@ -319,6 +389,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the DATABASE attribute information successfully.
+	 */
+
 	public void getDATABASESucessful() {
 		start("getDATABASESucessful");
 		counter++;
@@ -331,6 +405,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the DATABASE attribute information unsuccessfully.
+	 */
+
 	public void getDATABASEWrong() {
 		start("getDATABASEWrong");
 		counter++;
@@ -342,6 +420,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * Obtains the PASSWORD attribute information successfully.
+	 */
 
 	public void getPASSWORDSucessful() {
 		start("getPASSWORDSucessful");
@@ -367,6 +449,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the PORT attribute information successfully.
+	 */
+
 	public void getPORTSucessful() {
 		start("getPORTSucessful");
 		counter++;
@@ -391,6 +477,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * Obtains the USERNAME attribute information successfully.
+	 */
+
 	public void getUSERNAMESucessful() {
 		start("getUSERNAMESucessful");
 		counter++;
@@ -414,6 +504,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * modifies the Connect attribute information successfully.
+	 */
 
 	public void setConnectSucessful() {
 
@@ -460,6 +554,10 @@ public class DBConnectionTest {
 	}
 
 	@Test
+
+	/**
+	 * modifies the statement attribute information successfully.
+	 */
 
 	public void setStatementSucessful() {
 
@@ -515,6 +613,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * modifies the preparedStatement attribute information successfully.
+	 */
+
 	public void setPreparedStatementSuccesful() {
 
 		start("setPreparedStatementSuccesful");
@@ -569,6 +671,10 @@ public class DBConnectionTest {
 
 	@Test
 
+	/**
+	 * modifies the resultSet attribute information successfully.
+	 */
+
 	public void setResultSetSuccesful() {
 
 		start("setResultSetSuccesful");
@@ -615,7 +721,18 @@ public class DBConnectionTest {
 
 	}
 
+	/**
+	 * modifies the DATABASE attribute information successfully.
+	 */
+
 	@AfterAll
+
+	/**
+	 * 
+	 * function that ends the tests with a sign indicating the number of tests
+	 * performed and their values.
+	 */
+
 	public static void end() {
 
 		System.err.println("\n have been executed " + counter + " test");
