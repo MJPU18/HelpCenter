@@ -13,16 +13,16 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import co.edu.unbosque.connection.model.persistence.GeneralServiceDAOForTest;
+import co.edu.unbosque.connection.model.persistence.ParticipantDAOForTest;
+import co.edu.unbosque.connection.model.persistence.PsychologistDAOForTest;
 import co.edu.unbosque.model.GeneralServiceDTO;
 import co.edu.unbosque.model.ParticipantDTO;
 import co.edu.unbosque.model.PersonDTO;
 import co.edu.unbosque.model.PsychologistDTO;
 import co.edu.unbosque.model.persistence.GeneralServiceDAO;
-import co.edu.unbosque.model.persistence.GeneralServiceDAOForTest;
 import co.edu.unbosque.model.persistence.ParticipantDAO;
-import co.edu.unbosque.model.persistence.ParticipantDAOForTest;
 import co.edu.unbosque.model.persistence.PsychologistDAO;
-import co.edu.unbosque.model.persistence.PsychologistDAOForTest;
 
 /**
  * 

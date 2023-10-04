@@ -1,11 +1,13 @@
-package co.edu.unbosque.model.persistence;
+package co.edu.unbosque.connection.model.persistence;
 
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import co.edu.unbosque.controller.DBConnectionForTest;
+
+import co.edu.unbosque.connection.controller.DBConnectionForTest;
 import co.edu.unbosque.model.PersonDTO;
+import co.edu.unbosque.model.persistence.CRUDoperation;
 
 public class PersonDAOForTest implements CRUDoperation<PersonDTO> {
 
