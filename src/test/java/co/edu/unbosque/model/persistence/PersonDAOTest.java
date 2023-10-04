@@ -59,7 +59,7 @@ public class PersonDAOTest {
 		dbcon.initConnection();
 		try {
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement(
-					"INSERT INTO person (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
+					"INSERT INTO persons (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
 			dbcon.getPreparedstatement().setString(1, aux.getUserName());
 			dbcon.getPreparedstatement().setString(2, aux.getPassword());
 			dbcon.getPreparedstatement().setString(3, aux.getName());
@@ -78,7 +78,7 @@ public class PersonDAOTest {
 		long document = list.get(0).getDocument();
 		dbcon.initConnection();
 		try {
-			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM person WHERE document=?;"));
+			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM persons WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
 			dbcon.close();
@@ -102,7 +102,7 @@ public class PersonDAOTest {
 		dbcon.initConnection();
 		try {
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement(
-					"INSERT INTO person (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
+					"INSERT INTO persons (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
 			dbcon.getPreparedstatement().setString(1, aux.getUserName());
 			dbcon.getPreparedstatement().setString(2, aux.getPassword());
 			dbcon.getPreparedstatement().setString(3, aux.getName());
@@ -121,7 +121,7 @@ public class PersonDAOTest {
 		dbcon.initConnection();
 		try {
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement(
-					"UPDATE person SET username=?, userpassword=?, personname=?, document=?, dateofbirth=?, cityofbirth=?  WHERE document=?;"));
+					"UPDATE persons SET username=?, userpassword=?, personname=?, document=?, dateofbirth=?, cityofbirth=?  WHERE document=?;"));
 			dbcon.getPreparedstatement().setString(1, aux.getUserName());
 			dbcon.getPreparedstatement().setString(2, aux.getPassword());
 			dbcon.getPreparedstatement().setString(3, aux.getName());
@@ -138,7 +138,7 @@ public class PersonDAOTest {
 
 		dbcon.initConnection();
 		try {
-			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM person WHERE document=?;"));
+			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM persons WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
 			dbcon.close();
@@ -163,7 +163,7 @@ public class PersonDAOTest {
 		dbcon.initConnection();
 		try {
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement(
-					"INSERT INTO person (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
+					"INSERT INTO persons (username, userpassword, personname, document, dateofbirth, cityofbirth) VALUES(?,?,?,?,?,?);"));
 			dbcon.getPreparedstatement().setString(1, aux.getUserName());
 			dbcon.getPreparedstatement().setString(2, aux.getPassword());
 			dbcon.getPreparedstatement().setString(3, aux.getName());
@@ -182,7 +182,7 @@ public class PersonDAOTest {
 		long document = list.get(0).getDocument();
 		dbcon.initConnection();
 		try {
-			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM person WHERE document=?;"));
+			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM persons WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
 			dbcon.close();

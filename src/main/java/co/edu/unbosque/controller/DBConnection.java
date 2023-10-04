@@ -26,7 +26,7 @@ public class DBConnection {
 	private ResultSet resultset = null;
 	private final String IP = "35.239.57.35";
 	private final String PORT = "3306";
-	private final String DATABASE = "urregoJuan";
+	private final String DATABASE = "uyabanNicolas";
 	private final String USERNAME = "root";
 	private final String PASSWORD = "programacion2";
 
