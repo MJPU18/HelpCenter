@@ -14,8 +14,6 @@ import org.junit.jupiter.api.Test;
 
 import co.edu.unbosque.connection.controller.DBConnectionForTest;
 import co.edu.unbosque.model.ParticipantDTO;
-import co.edu.unbosque.model.ParticipantDTOTest;
-import co.edu.unbosque.model.PersonDTO;
 
 /**
  * Class homonymous to ParticipantDAO in terms of functions in which the
