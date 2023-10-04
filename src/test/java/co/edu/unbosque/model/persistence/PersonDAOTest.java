@@ -17,8 +17,8 @@ import co.edu.unbosque.model.PersonDTO;
 import co.edu.unbosque.model.PersonDTOTest;
 
 /**
- * This class represents a data access object (DAO) for managing PersonDTO
- * objects.
+ * Class homonymous to PersonDAO in terms of functions in which the
+ * results of each entry that may exist are tested.
  * 
  * @author Juan Pablo Urrego
  * @author Javier Meza Montero
