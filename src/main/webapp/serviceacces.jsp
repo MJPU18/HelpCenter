@@ -23,6 +23,7 @@
 <script src="js/registration.js"></script>
 <script src="js/updates.js"></script>
 <script src="js/regserv.js"></script>
+<script src="js/inputcontroll.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -59,9 +60,9 @@
 	</div>
 
 
-	<!-- form actualizar participante -->
+	<!-- form registrar participante -->
 	<form class="row g-3 container" id="participantservform"
-		action="usercontrollerservlet" method="post">
+		action="usercontrollerservlet" method="post" onsubmit="return validateServRegPart()">
 		<div class="col-md-6">
 			<label for="participantusername" class="form-label">Username:</label>
 			<input type="text" class="form-control" id="participantusername"
@@ -75,7 +76,7 @@
 		<div class="col-12">
 			<label for="participantname" class="form-label">Name:</label> <input
 				type="text" class="form-control" id="participantname"
-				name="participantname" placeholder="Name"></input>
+				name="participantname" placeholder="Name" oninput="validateInput(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantdocument" class="form-label">Document:</label>
@@ -88,23 +89,23 @@
 			<label for="participantdateofbirth" class="form-label">Date
 				of Birth</label> <input type="date" class="form-control"
 				id="participantdateofbirth" name="participantdateofbirth"
-				placeholder="Date of Birth" onchange="validateYear(this)"></input>
+				placeholder="Date of Birth" onblur="validateYear(this)"></input>
 		</div>
 		<div class="col-12">
 			<label for="participantcity" class="form-label">City:</label> <input
 				type="text" class="form-control" id="participantcity"
-				name="participantcity" placeholder="City"></input>
+				name="participantcity" placeholder="City" oninput="validateInput(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participantnickname" class="form-label">Nickname:</label>
 			<input type="text" class="form-control" id="participantnickname"
-				name="participantnickname" placeholder="Nickname"></input>
+				name="participantnickname" placeholder="Nickname" oninput="validateInput(this)"></input>
 		</div>
 		<div class="col-md-6">
 			<label for="participatedsessions" class="form-label">Participated
 				Sessions:</label> <input type="number" class="form-control"
 				id="participatedsessions" name="participatedsessions"
-				placeholder="Participated Sessions" min="0"></input>
+				placeholder="Participated Sessions" min="0" oninput="validateNumber(this)" step="1"></input>
 		</div>
 		<div class="col-12">
 			<button type="submit" class="btn btn-primary" id="method"
