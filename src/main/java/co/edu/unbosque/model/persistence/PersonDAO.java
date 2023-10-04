@@ -100,6 +100,7 @@ public class PersonDAO implements CRUDoperation<PersonDTO> {
 			dbcon.setPreparedstatement(dbcon.getConnect().prepareStatement("DELETE FROM persons WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
+			dbcon.close();
 			return listPeople.remove(index);
 		} catch (SQLException e) {
 			e.printStackTrace();

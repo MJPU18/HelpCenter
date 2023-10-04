@@ -112,6 +112,7 @@ public class PsychologistDAO implements CRUDoperation<PsychologistDTO> {
 					dbcon.getConnect().prepareStatement("DELETE FROM psychologist WHERE document=?;"));
 			dbcon.getPreparedstatement().setLong(1, document);
 			dbcon.getPreparedstatement().executeUpdate();
+			dbcon.close();
 			return listPsychologists.remove(index);
 		} catch (SQLException e) {
 			e.printStackTrace();
