@@ -1,4 +1,4 @@
-package co.edu.unbosque.controller;
+package co.edu.unbosque.connection.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

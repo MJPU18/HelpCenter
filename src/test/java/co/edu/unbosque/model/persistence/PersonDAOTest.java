@@ -12,7 +12,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import co.edu.unbosque.controller.DBConnectionForTest;
+import co.edu.unbosque.connection.controller.DBConnectionForTest;
 import co.edu.unbosque.model.PersonDTO;
 import co.edu.unbosque.model.PersonDTOTest;
 
